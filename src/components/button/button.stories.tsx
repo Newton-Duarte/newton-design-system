@@ -4,6 +4,12 @@ import { Button } from './'
 const meta: Meta<typeof Button> = {
   component: Button,
   title: 'Components/Button',
+  argTypes: {
+    variant: {
+      options: ['default', 'outline', 'ghost', 'link'],
+      control: { type: 'inline-radio' },
+    },
+  },
 }
 
 export default meta
