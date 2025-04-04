@@ -9,7 +9,11 @@ import {
 } from './src/tokens'
 
 const config: Config = {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: [
+    './index.html',
+    './src/**/*.{js,ts,jsx,tsx}',
+    './.storybook/**/*.{js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       colors,
