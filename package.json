@@ -1,6 +1,7 @@
 {
   "name": "@newton-design-system/react",
   "version": "1.0.1",
+  "license": "MIT",
   "type": "module",
   "main": "dist/newton-design-system.cjs.js",
   "module": "dist/newton-design-system.es.js",

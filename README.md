@@ -1,54 +1,84 @@
-# React + TypeScript + Vite
+# 🧱 Newton Design System · React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A reusable React component library with design tokens and Tailwind-powered components, built with Vite, Tailwind CSS, CVA, and Storybook. Share your design language across projects with ease.
 
-Currently, two official plugins are available:
+[![npm version](https://img.shields.io/npm/v/@newton-design-system/react.svg)](https://www.npmjs.com/package/@newton-design-system/react)
+[![license](https://img.shields.io/npm/l/@newton-design-system/react.svg)](LICENSE)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## ✨ Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 📦 Ready-to-use React components
+- 🎨 Centralized design tokens (colors, spacing, typography, etc.)
+- ⚡ Tailwind CSS + [CVA](https://cva.style/) for flexible variants
+- 📚 Storybook for documentation and testing
+- �� Lightweight and tree-shakeable
+- 🔧 Easily extendable with your own theme
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+---
+
+## 🚀 Installation
+
+```bash
+npm install @newton-design-system/react
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+> ⚠️ This library uses `react` and `react-dom` as peer dependencies. Make sure they’re installed in your project.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 🛠️ Usage
+
+```tsx
+import { Button } from '@newton-design-system/react'
+
+export default function App() {
+  return <Button variant="default">Click me</Button>
+}
 ```
+
+---
+
+## 📚 Documentation
+
+You can browse all available components and tokens in the [📚 Storybook](#)
+
+---
+
+## 🎨 Design Tokens
+
+The design system includes tokens for:
+
+- Colors
+- Spacing
+- Font Sizes
+- Font Weights
+- Fonts
+- Border Radius
+- Line Heights
+
+These tokens are mapped to Tailwind using the config file, so you can use them in both your components and custom styles.
+
+---
+
+## 📦 Technologies Used
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [CVA (Class Variance Authority)](https://cva.style/)
+- [Storybook](https://storybook.js.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+
+---
+
+## 🤝 Contributing
+
+Coming soon! For now, feel free to open issues or discussions.
+
+---
+
+## 📄 License
+
+MIT © Newton Duarte Cavalcanti
