@@ -9,8 +9,8 @@ const buttonVariants = cva(
       variant: {
         default: 'bg-primary text-white hover:bg-primary/90',
         outline:
-          'border-input hover:bg-accent hover:text-accent-foreground border border-primary text-primary',
-        ghost: 'hover:bg-accent hover:text-accent-foreground',
+          'border-input border border-primary text-primary hover:bg-primary hover:text-white',
+        ghost: 'hover:bg-primary hover:text-white',
         link: 'text-primary underline-offset-4 hover:underline',
       },
       size: {
