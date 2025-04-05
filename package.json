@@ -30,7 +30,9 @@
     "build:all": "vite build && tsc",
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "plop": "plop",
+    "postplop": "prettier -w './src/components/**/*.{ts,tsx}'"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -56,6 +58,7 @@
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^0.12.0",
     "globals": "^15.15.0",
+    "plop": "^4.0.1",
     "postcss": "^8.5.3",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
