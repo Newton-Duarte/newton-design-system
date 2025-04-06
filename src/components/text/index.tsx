@@ -1,5 +1,10 @@
 import { cva, type VariantProps } from 'class-variance-authority'
-import { ElementType, HTMLAttributes, forwardRef } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ElementType,
+  HTMLAttributes,
+  JSX,
+} from 'react'
 import { cn } from '../../lib/utils'
 
 const textVariants = cva('text-md leading-base', {
@@ -26,20 +31,32 @@ const textVariants = cva('text-md leading-base', {
   },
 })
 
-export interface TextProps
-  extends HTMLAttributes<HTMLParagraphElement>,
+export interface TextProps<T extends ElementType>
+  extends HTMLAttributes<JSX.IntrinsicAttributes>,
     VariantProps<typeof textVariants> {
-  as?: ElementType
+  as?: T
 }
 
-export const Text = forwardRef<HTMLDivElement, TextProps>(
-  ({ className, variant, size, as: Tag = 'p', ...props }, ref) => (
+type ReturnProps<P extends ElementType> = TextProps<P> &
+  Omit<ComponentPropsWithoutRef<P>, keyof TextProps<P>>
+
+export function Text<T extends ElementType = 'p'>({
+  className,
+  variant,
+  size,
+  as,
+  ...props
+}: ReturnProps<T>) {
+  let Tag: ElementType = 'p'
+
+  if (as) {
+    Tag = as
+  }
+
+  return (
     <Tag
-      ref={ref}
       className={cn(textVariants({ variant, size, className }))}
       {...props}
     />
   )
-)
-
-Text.displayName = 'Text'
+}
