@@ -18,7 +18,7 @@ const meta: Meta<typeof Text> = {
       control: { type: 'inline-radio' },
     },
     as: {
-      options: ['p', 'span'],
+      options: ['p', 'span', 'label', 'a'],
       control: { type: 'inline-radio' },
     },
   },
