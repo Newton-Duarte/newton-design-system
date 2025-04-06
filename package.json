@@ -16,13 +16,6 @@
   "files": [
     "dist"
   ],
-  "exports": {
-    ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/newton-design-system.es.js",
-      "require": "./dist/newton-design-system.cjs.js"
-    }
-  },
   "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "vite build",
