@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { Button } from './'
+import Button from './'
 import { fn } from '@storybook/test'
 
 const meta: Meta<typeof Button> = {

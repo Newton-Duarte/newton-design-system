@@ -1,4 +1,4 @@
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
 import {
   ComponentPropsWithoutRef,
   ElementType,
@@ -6,6 +6,14 @@ import {
   JSX,
 } from 'react'
 import { cn } from '../../lib/utils'
+
+export type TextVariant =
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'error'
+export type TextSize = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 const textVariants = cva('text-md leading-base', {
   variants: {
@@ -32,15 +40,16 @@ const textVariants = cva('text-md leading-base', {
 })
 
 export interface TextProps<T extends ElementType>
-  extends HTMLAttributes<JSX.IntrinsicAttributes>,
-    VariantProps<typeof textVariants> {
+  extends HTMLAttributes<JSX.IntrinsicAttributes> {
   as?: T
+  variant?: TextVariant
+  size?: TextSize
 }
 
 type ReturnProps<P extends ElementType> = TextProps<P> &
   Omit<ComponentPropsWithoutRef<P>, keyof TextProps<P>>
 
-export function Text<T extends ElementType = 'p'>({
+function Text<T extends ElementType = 'p'>({
   className,
   variant,
   size,
@@ -60,3 +69,5 @@ export function Text<T extends ElementType = 'p'>({
     />
   )
 }
+
+export default Text

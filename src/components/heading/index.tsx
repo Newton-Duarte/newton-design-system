@@ -1,4 +1,4 @@
-import { cva, type VariantProps } from 'class-variance-authority'
+import { cva } from 'class-variance-authority'
 import {
   ComponentPropsWithoutRef,
   ElementType,
@@ -6,6 +6,14 @@ import {
   JSX,
 } from 'react'
 import { cn } from '../../lib/utils'
+
+export type HeadingVariant =
+  | 'default'
+  | 'primary'
+  | 'secondary'
+  | 'success'
+  | 'error'
+export type HeadingSize = '2xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl'
 
 const headingVariants = cva('font-bold leading-short', {
   variants: {
@@ -33,15 +41,16 @@ const headingVariants = cva('font-bold leading-short', {
 })
 
 export interface HeadingProps<T extends ElementType>
-  extends HTMLAttributes<JSX.IntrinsicAttributes>,
-    VariantProps<typeof headingVariants> {
+  extends HTMLAttributes<JSX.IntrinsicAttributes> {
   as?: T
+  variant?: HeadingVariant
+  size?: HeadingSize
 }
 
 type ReturnProps<P extends ElementType> = HeadingProps<P> &
   Omit<ComponentPropsWithoutRef<P>, keyof HeadingProps<P>>
 
-export function Heading<T extends ElementType = 'h1'>({
+function Heading<T extends ElementType = 'h1'>({
   className,
   variant,
   size,
@@ -61,3 +70,5 @@ export function Heading<T extends ElementType = 'h1'>({
     />
   )
 }
+
+export default Heading
