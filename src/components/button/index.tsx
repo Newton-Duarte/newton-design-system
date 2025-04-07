@@ -6,20 +6,20 @@ export type ButtonVariant = 'default' | 'outline' | 'ghost' | 'link'
 export type ButtonSize = 'sm' | 'md' | 'lg'
 
 const buttonVariants = cva(
-  'focus:ring-ring inline-flex items-center justify-center rounded-md text-sm font-medium text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+  'focus:nds-ring-ring nds-inline-flex nds-items-center nds-justify-center nds-rounded-md nds-text-sm nds-font-medium nds-text-primary nds-transition-colors focus:nds-outline-none focus:nds-ring-2 focus:nds-ring-offset-2 disabled:nds-pointer-events-none disabled:nds-opacity-50',
   {
     variants: {
       variant: {
-        default: 'bg-primary text-white hover:bg-primary/90',
+        default: 'nds-bg-primary nds-text-white hover:nds-bg-primary/90',
         outline:
-          'border-input border border-primary hover:bg-primary hover:text-white',
-        ghost: 'hover:bg-primary hover:text-white',
-        link: 'underline-offset-4 hover:underline',
+          'nds-border-input nds-border nds-border-primary hover:nds-bg-primary hover:nds-text-white',
+        ghost: 'hover:nds-bg-primary hover:nds-text-white',
+        link: 'nds-underline-offset-4 hover:nds-underline',
       },
       size: {
-        sm: 'h-8 rounded-md px-3',
-        md: 'h-10 rounded-md px-4',
-        lg: 'h-12 rounded-md px-6 text-lg',
+        sm: 'nds-h-8 nds-rounded-md nds-px-3',
+        md: 'nds-h-10 nds-rounded-md nds-px-4',
+        lg: 'nds-h-12 nds-rounded-md nds-px-6 nds-text-lg',
       },
     },
     defaultVariants: {

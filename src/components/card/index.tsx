@@ -10,15 +10,15 @@ export type CardVariant =
   | 'error'
 
 const cardVariants = cva(
-  'border-1 rounded rounded-sm border bg-white p-4 shadow-sm',
+  'nds-border-1 nds-rounded nds-rounded-sm nds-border nds-p-4 nds-shadow-sm hover:nds-shadow-lg',
   {
     variants: {
       variant: {
-        default: '',
-        primary: 'bg-primary text-white',
-        secondary: 'bg-secondary',
-        success: 'bg-success',
-        error: 'bg-error',
+        default: 'nds-bg-white',
+        primary: 'nds-bg-primary',
+        secondary: 'nds-bg-secondary',
+        success: 'nds-bg-success',
+        error: 'nds-bg-error',
       },
     },
     defaultVariants: {

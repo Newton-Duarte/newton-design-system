@@ -15,23 +15,23 @@ export type HeadingVariant =
   | 'error'
 export type HeadingSize = '2xl' | '4xl' | '5xl' | '6xl' | '7xl' | '8xl' | '9xl'
 
-const headingVariants = cva('font-bold leading-short', {
+const headingVariants = cva('nds-font-bold nds-leading-short', {
   variants: {
     variant: {
-      default: 'text-gray-800',
-      primary: 'text-primary',
-      secondary: 'text-secondary',
-      success: 'text-success',
-      error: 'text-error',
+      default: 'nds-text-gray-800',
+      primary: 'nds-text-primary',
+      secondary: 'nds-text-secondary',
+      success: 'nds-text-success',
+      error: 'nds-text-error',
     },
     size: {
-      '2xl': 'text-2xl',
-      '4xl': 'text-4xl',
-      '5xl': 'text-5xl',
-      '6xl': 'text-6xl',
-      '7xl': 'text-7xl',
-      '8xl': 'text-8xl',
-      '9xl': 'text-9xl',
+      '2xl': 'nds-text-2xl',
+      '4xl': 'nds-text-4xl',
+      '5xl': 'nds-text-5xl',
+      '6xl': 'nds-text-6xl',
+      '7xl': 'nds-text-7xl',
+      '8xl': 'nds-text-8xl',
+      '9xl': 'nds-text-9xl',
     },
   },
   defaultVariants: {

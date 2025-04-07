@@ -11,19 +11,30 @@
   },
   "homepage": "https://github.com/newton-duarte/newton-design-system#readme",
   "type": "module",
-  "main": "dist/newton-design-system.cjs.js",
-  "module": "dist/newton-design-system.es.js",
+  "main": "./dist/newton-design-system.cjs",
+  "module": "./dist/newton-design-system.mjs",
+  "types": "dist/types/index.d.ts",
+  "style": "./dist/styles.css",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "style": "./dist/styles.css",
+      "import": "./dist/newton-design-system.mjs",
+      "require": "./dist/newton-design-system.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
   "files": [
     "dist"
   ],
-  "types": "dist/types/index.d.ts",
   "scripts": {
     "build": "vite build",
     "build:types": "tsc",
-    "build:all": "vite build && tsc",
+    "build:all": "vite build && vite build && npm run build:css && tsc",
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
+    "build:css": "postcss src/styles/globals.css -o dist/styles.css",
     "plop": "plop",
     "postplop": "prettier -w './src/components/**/*.{ts,tsx}'"
   },
@@ -53,6 +64,7 @@
     "globals": "^15.15.0",
     "plop": "^4.0.1",
     "postcss": "^8.5.3",
+    "postcss-cli": "^11.0.1",
     "prettier": "^3.5.3",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "storybook": "^8.6.12",
@@ -69,7 +81,8 @@
   },
   "peerDependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^3.0.0 || ^4.0.0"
   },
   "publishConfig": {
     "access": "public"

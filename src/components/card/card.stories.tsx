@@ -29,28 +29,28 @@ export const Default: Story = {
 
 export const Primary: Story = {
   args: {
-    children: <Text className="text-white">Card Primary</Text>,
+    children: <Text className="nds-text-white">Card Primary</Text>,
     variant: 'primary',
   },
 }
 
 export const Secondary: Story = {
   args: {
-    children: <Text className="text-white">Card Secondary</Text>,
+    children: <Text className="nds-text-white">Card Secondary</Text>,
     variant: 'secondary',
   },
 }
 
 export const Success: Story = {
   args: {
-    children: <Text className="text-white">Card Success</Text>,
+    children: <Text className="nds-text-white">Card Success</Text>,
     variant: 'success',
   },
 }
 
 export const Error: Story = {
   args: {
-    children: <Text className="text-white">Card Error</Text>,
+    children: <Text className="nds-text-white">Card Error</Text>,
     variant: 'error',
   },
 }

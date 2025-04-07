@@ -15,22 +15,22 @@ export type TextVariant =
   | 'error'
 export type TextSize = 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
-const textVariants = cva('text-md leading-base', {
+const textVariants = cva('nds-text-md nds-leading-base', {
   variants: {
     variant: {
-      default: 'text-gray-800',
-      primary: 'text-primary',
-      secondary: 'text-secondary',
-      success: 'text-success',
-      error: 'text-error',
+      default: 'nds-text-gray-800',
+      primary: 'nds-text-primary',
+      secondary: 'nds-text-secondary',
+      success: 'nds-text-success',
+      error: 'nds-text-error',
     },
     size: {
-      xxs: 'text-xxs',
-      xs: 'text-xs',
-      sm: 'text-sm',
-      md: 'text-md',
-      lg: 'text-lg',
-      xl: 'text-xl',
+      xxs: 'nds-text-xxs',
+      xs: 'nds-text-xs',
+      sm: 'nds-text-sm',
+      md: 'nds-text-md',
+      lg: 'nds-text-lg',
+      xl: 'nds-text-xl',
     },
   },
   defaultVariants: {

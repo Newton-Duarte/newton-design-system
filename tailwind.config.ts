@@ -9,6 +9,7 @@ import {
 } from './src/tokens'
 
 const config: Config = {
+  prefix: 'nds-',
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',

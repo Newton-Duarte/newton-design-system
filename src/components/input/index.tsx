@@ -5,7 +5,7 @@ import { cn } from '../../lib/utils'
 export type InputVariant = 'default'
 
 const inputVariants = cva(
-  'border-1 h-10 rounded-sm border border-gray-400 px-4 focus:border-none focus:outline-none focus:ring-2 focus:ring-primary',
+  'nds-border-1 nds-h-10 nds-rounded-sm nds-border nds-border-gray-400 nds-px-4 focus:nds-border-none focus:nds-outline-none focus:nds-ring-2 focus:nds-ring-primary',
   {
     variants: {
       variant: {
