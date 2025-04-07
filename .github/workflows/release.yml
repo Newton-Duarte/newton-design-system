@@ -36,7 +36,7 @@ jobs:
         run: npm ci
 
       - name: 🛠️ Build package
-        run: npm run build:all
+        run: npm run build
 
       - name: 🚀 Publish to NPM
         run: npm publish --access public
