@@ -1,3 +1,5 @@
+'use client'
+
 import { cva } from 'class-variance-authority'
 import {
   ComponentPropsWithoutRef,
@@ -65,7 +67,7 @@ function Heading<T extends ElementType = 'h1'>({
 
   return (
     <Tag
-      className={cn(headingVariants({ variant, size, className }))}
+      className={cn(headingVariants({ variant, size }), className)}
       {...props}
     />
   )

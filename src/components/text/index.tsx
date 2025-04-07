@@ -1,3 +1,5 @@
+'use client'
+
 import { cva } from 'class-variance-authority'
 import {
   ComponentPropsWithoutRef,
@@ -64,7 +66,7 @@ function Text<T extends ElementType = 'p'>({
 
   return (
     <Tag
-      className={cn(textVariants({ variant, size, className }))}
+      className={cn(textVariants({ variant, size }), className)}
       {...props}
     />
   )

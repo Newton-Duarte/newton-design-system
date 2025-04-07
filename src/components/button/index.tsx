@@ -1,3 +1,5 @@
+'use client'
+
 import { cva } from 'class-variance-authority'
 import { ButtonHTMLAttributes } from 'react'
 import { cn } from '../../lib/utils'
@@ -37,7 +39,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 function Button({ className, variant, size, ...props }: ButtonProps) {
   return (
     <button
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, size }), className)}
       {...props}
     />
   )

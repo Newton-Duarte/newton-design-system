@@ -1,3 +1,5 @@
+'use client'
+
 import { cva } from 'class-variance-authority'
 import { HTMLAttributes } from 'react'
 import { cn } from '../../lib/utils'
@@ -32,5 +34,5 @@ export interface CardProps extends HTMLAttributes<HTMLDivElement> {
 }
 
 export default function Card({ className, variant, ...props }: CardProps) {
-  return <div className={cn(cardVariants({ variant, className }))} {...props} />
+  return <div className={cn(cardVariants({ variant }), className)} {...props} />
 }

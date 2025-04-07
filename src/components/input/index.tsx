@@ -1,3 +1,5 @@
+'use client'
+
 import { cva } from 'class-variance-authority'
 import { HTMLProps } from 'react'
 import { cn } from '../../lib/utils'
@@ -24,7 +26,7 @@ export interface InputProps extends HTMLProps<HTMLInputElement> {
 
 function Input({ className, variant, ...props }: InputProps) {
   return (
-    <input className={cn(inputVariants({ variant, className }))} {...props} />
+    <input className={cn(inputVariants({ variant }), className)} {...props} />
   )
 }
 
