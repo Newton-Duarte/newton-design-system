@@ -8,12 +8,6 @@ const meta: Meta<typeof Text2> = {
     layout: 'centered',
   },
   tags: ['autodocs'],
-  argTypes: {
-    variant: {
-      options: ['default'],
-      control: { type: 'inline-radio' },
-    },
-  },
 }
 
 export default meta
@@ -22,6 +16,5 @@ type Story = StoryObj<typeof Text2>
 export const Default: Story = {
   args: {
     children: 'Storybook',
-    variant: 'default',
   },
 }
