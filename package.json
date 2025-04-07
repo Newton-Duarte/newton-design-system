@@ -11,32 +11,36 @@
   },
   "homepage": "https://github.com/newton-duarte/newton-design-system#readme",
   "type": "module",
-  "main": "./dist/newton-design-system.cjs",
-  "module": "./dist/newton-design-system.mjs",
-  "types": "dist/types/index.d.ts",
+  "main": "./dist/index.js",
+  "browser": "./dist/index.js",
+  "types": "./dist/types/index.d.ts",
   "style": "./dist/styles.css",
+  "sideEffects": false,
   "exports": {
     ".": {
       "types": "./dist/types/index.d.ts",
       "style": "./dist/styles.css",
-      "import": "./dist/newton-design-system.mjs",
-      "require": "./dist/newton-design-system.cjs"
+      "import": "./dist/index.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.js"
     },
     "./styles.css": "./dist/styles.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && npm run build:types && npm run build:css",
     "build:types": "tsc",
-    "build:all": "vite build && vite build && npm run build:css && tsc",
     "lint": "eslint .",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "build:css": "postcss src/styles/globals.css -o dist/styles.css",
     "plop": "plop",
-    "postplop": "prettier -w './src/components/**/*.{ts,tsx}'"
+    "postplop": "prettier -w './src/components/**/*.{ts,tsx}'",
+    "prepare": "npm run build"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",
@@ -86,5 +90,12 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "dist/types/*"
+      ]
+    }
   }
 }

@@ -8,26 +8,24 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 export default defineConfig({
   plugins: [react(), tsconfigPaths()],
   build: {
+    outDir: 'dist',
+    sourcemap: true,
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
-      name: '@newton-design-system/react',
-      fileName: (format) =>
-        format === 'es'
-          ? 'newton-design-system.mjs'
-          : 'newton-design-system.cjs',
-      formats: ['es', 'cjs'],
+      formats: ['es'],
     },
     rollupOptions: {
-      external: ['react', 'react-dom', 'tailwindcss'],
+      external: ['react', 'react-dom', 'react/jsx-runtime'],
       output: {
-        exports: 'named',
-        assetFileNames: 'globals.css',
-        globals: {
-          react: 'React',
-          'react-dom': 'ReactDOM',
-        },
+        preserveModules: true,
+        preserveModulesRoot: 'src',
+        entryFileNames: '[name].js',
       },
     },
+    emptyOutDir: true,
+  },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
   },
   css: {
     postcss: {
