@@ -1,6 +1,5 @@
 'use client'
 
-import React from 'react'
 import { cva } from 'class-variance-authority'
 import { HTMLProps } from 'react'
 import { cn } from '../../lib/utils'
