@@ -13,8 +13,12 @@ A reusable React component library with design tokens and Tailwind-powered compo
 - 🎨 Centralized design tokens (colors, spacing, typography, etc.)
 - ⚡ Tailwind CSS + [CVA](https://cva.style/) for flexible variants
 - 📚 Storybook for documentation and testing
-- �� Lightweight and tree-shakeable
+- �� Lightweight, tree-shakeable, and optimized for performance
 - 🔧 Easily extendable with your own theme
+- ✅ Compatible with:
+  - Vite + React
+  - Next.js 15 (Pages Router and App Router)
+  - Next.js 15 + App Router + Turbopack
 
 ---
 
@@ -24,13 +28,14 @@ A reusable React component library with design tokens and Tailwind-powered compo
 npm install @newton-design-system/react
 ```
 
-> ⚠️ This library uses `react` and `react-dom` as peer dependencies. Make sure they’re installed in your project.
+> ⚠️ This library uses `react`, `react-dom`, and `tailwindcss` as peer dependencies. Make sure they’re installed in your project.
 
 ---
 
 ## 🛠️ Usage
 
 ```tsx
+import '@newton-design-system/react/styles.css'
 import { Button } from '@newton-design-system/react'
 
 export default function App() {
